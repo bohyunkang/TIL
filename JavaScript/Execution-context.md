@@ -42,7 +42,8 @@ foo();
 2. 나중에 집어넣은 데이터가 먼저 나온다. 이 특징을 줄여서 LIFO(Last In First Out, 후입 선출)라고 부른다.
 3. 데이터를 집어넣는 `push`, 데이터를 추출하는 `pop`, 맨 나중에 집어넣은 데이터를 확인하는 `peek` 등의 작업을 할 수 있다.
 
-![논리적 스택 구조를 가지는 실행 컨텍스트 스택](https://user-images.githubusercontent.com/65386533/109933462-c9960b80-7d0e-11eb-8c86-33105a395f3a.png "논리적 스택 구조를 가지는 실행 컨텍스트 스택")
+<img src="https://user-images.githubusercontent.com/65386533/109933462-c9960b80-7d0e-11eb-8c86-33105a395f3a.png" alt="논리적 스택 구조를 가지는 실행 컨텍스트 스택" width="700">
+
 ▲ 논리적 스택 구조를 가지는 실행 컨텍스트 스택 
 
 1. 컨트롤이 실행 가능한 코드로 이동하면 논리적 스택 구조를 가지는 새로운 실행 컨텍스트 스택이 생성된다.
@@ -52,7 +53,8 @@ foo();
 
 ## 2. 실행 컨텍스트의 3가지 객체
 
-![실행 컨텍스트의 구조](https://user-images.githubusercontent.com/65386533/109933469-ca2ea200-7d0e-11eb-9163-2c8ca830f961.png "실행 컨텍스트의 구조")
+<img src="https://user-images.githubusercontent.com/65386533/109933469-ca2ea200-7d0e-11eb-9163-2c8ca830f961.png" alt="실행 컨텍스트의 구조">
+
 ▲ 실행 컨텍스트의 구조
 
 실행 컨텍스트는 실행 가능한 코드를 형상화하고 구분하는 추상적인 개념이지만 물리적으로는 객체의 형태를 가지며 3가지 프로퍼티를 가진다.
@@ -74,13 +76,15 @@ Variable Object는 실행 컨텍스트의 프로퍼티이기 때문에 값을 �
 **전역 컨텍스트의 경우**
 Variable Object는 유일하며 최상위에 위치하고 모든 전역 변수, 전역 함수 등을 포함하는 **전역 객체(Global Object / GO)**를 가리킨다. 전역 객체는 전역에 선언된 전역 변수와 전역 함수를 프로퍼티로 소유한다.
 
-![전역 컨텍스트의 경우, Variable Object가 가리키는 전역 객체](https://user-images.githubusercontent.com/65386533/109933470-cac73880-7d0e-11eb-83e6-0fe1cf915d6c.png "전역 컨텍스트의 경우, Variable Object가 가리키는 전역 객체")
+<img src="https://user-images.githubusercontent.com/65386533/109933470-cac73880-7d0e-11eb-83e6-0fe1cf915d6c.png" alt="전역 컨텍스트의 경우, Variable Object가 가리키는 전역 객체" width="700">
+
 ▲ 전역 컨텍스트의 경우, Variable Object가 가리키는 전역 객체
 
 **함수 컨텍스트의 경우**
 Variable Object는 **Activation Object(AO / 활성 객체)**를 가리키며 매개변수와 인수들의 정보를 배열의 형태로 담고 있는 객체인 arguments object가 추가된다.
 
-![함수 컨텍스트의 경우, Variable Object가 가리키는 Activation Object](https://user-images.githubusercontent.com/65386533/109933471-cac73880-7d0e-11eb-81e4-ee8a0d901890.png "함수 컨텍스트의 경우, Variable Object가 가리키는 Activation Object")
+<img src="https://user-images.githubusercontent.com/65386533/109933471-cac73880-7d0e-11eb-81e4-ee8a0d901890.png" alt="함수 컨텍스트의 경우, Variable Object가 가리키는 Activation Object" width="700">
+
 ▲ 함수 컨텍스트의 경우, Variable Object가 가리키는 Activation Object
 
 ### 2.2 Scope Chain (SC)
@@ -89,7 +93,8 @@ Variable Object는 **Activation Object(AO / 활성 객체)**를 가리키며 매
 
 현재 실행 컨텍스트의 활성 객체(AO)를 선두로 하여 순차적으로 상위 컨텍스트의 활성 객체(AO)를 가리키며 마지막 리스트는 전역 객체(GO)를 가리킨다.
 
-![스코프 체인](https://user-images.githubusercontent.com/65386533/109933474-cb5fcf00-7d0e-11eb-90c9-425b5822512d.png "스코프 체인")
+<img src="https://user-images.githubusercontent.com/65386533/109933474-cb5fcf00-7d0e-11eb-90c9-425b5822512d.png" alt="스코프 체인" width="700">
+
 ▲ 스코프 체인
 
 **스코프 체인은 식별자 중에서 객체(전역 객체 제외)의 프로퍼티가 아닌 식별자, 즉 변수를 검색하는 메커니즘이다.**
