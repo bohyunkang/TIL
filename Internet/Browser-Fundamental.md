@@ -350,8 +350,8 @@ HTML을 다음과 같이 작성하면,
 
 ```html
 <p>  
-<img src="http://helloworld.naver.com/image.gif" alt="image.gif" width="100" height="100" style="float:right">  
-Lorem ipsum dolor sit amet, consectetuer...  
+  <img src="http://helloworld.naver.com/image.gif" alt="image.gif" width="100" height="100" style="float:right">  
+  Lorem ipsum dolor sit amet, consectetuer...  
 </p>
 ```
 
@@ -417,7 +417,10 @@ div {
 
 붉은색 박스가 초록색 박스보다 마크업에서 먼저 나오기 때문에 일반적인 흐름이라면 먼저 그려져야 하지만 `z-index` 속성이 높기 때문에 더 앞쪽에 표시된다.
 
-## 💡 **브라우저의 캐시란 무엇이고, 브라우저의 캐시로 인해 css가 반영이 안되는 경우는 어떤 경우이며, 해결방법은 무엇일까?**
+---
+# 💡 추가적으로 생각해보기
+
+## **브라우저의 캐시란 무엇이고, 브라우저의 캐시로 인해 css가 반영이 안되는 경우는 어떤 경우이며, 해결방법은 무엇일까?**
 
 ### 1. 캐시
 
@@ -449,6 +452,8 @@ div {
 유저의 하드디스크에 최신버전파일이 캐시되어 있지 않으면 포맷이 안 맞고, 자바스크립트가 깨지고, 올바르지 않은 이미지가 나타나는 등의 에러들이 발생할 수 있다.
 
 그렇기 때문에 대부분의 브라우저는 '캐시 제거'버튼이 있다. 하지만 캐시를 삭제하고 다시 웹사이트를 방문하게 되면 페이지 로딩에 시간이 조금 더 걸린다.
+
+--- 
 
 - 참조
 
