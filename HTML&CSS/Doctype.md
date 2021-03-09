@@ -22,6 +22,8 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 ```
 
+---
+
 - 참조
 
     <HTML5+CSS3+JavaScript로 배우는 웹 프로그래밍 기초> 천인국 저.
