@@ -37,6 +37,7 @@ _top은 최상위(가장 최고 부모) 창에서 열립니다.
 <a href="info.html" target="_blank">참고사항</a>
 <-- 여기서 info.html은 base 태그의 기본 디렉토리를 포함하여 "http://www.company.com/info.html"을 의미한다. -->
 ```
+---
 
 - 참조
 
