@@ -2,7 +2,7 @@
 
 ## 1. svg란?
 
-- SVG(Scalable Vector Graphics)는 XML-기반의 벡터 이미지 포맨.
+- SVG(Scalable Vector Graphics)는 XML-기반의 벡터 이미지 포맷.
 - 웹에서 벡터-기반의 그래픽을 정의할 때 사용됨.
 
 ## 2. 장점
