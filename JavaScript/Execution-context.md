@@ -4,7 +4,7 @@
 
 실행 컨텍스트(Execution Context)는 함수 실행에 대한 세부 정보를 담고 있는 내부 데이터 구조이다. 제어 흐름의 현재 위치, 변수의 현재 값, `this`의 값 등 실행 중인 함수의 실행 절차에 대한 정보가 실행 컨텍스트에 저장된다.
 
-`scope`, `hoisting`, `this`, `function`, `closure` 등의 동작원리를 담고 있는 자바스크립트의 핵심원리로, 실행 컨텍스트는 '실행 가능한 코드가 실행되기 위해 필요한 환경'이라고 말할 수 있다. 일반적으로 실행 가능한 코드는 전역 코드와 함수 내 코드이다. 
+`scope`, `hoisting`, `this`, `function`, `closure` 등의 동작원리를 담고 있는 자바스크립트의 핵심원리로, 실행 컨텍스트는 '실행 가능한 코드가 실행되기 위해 필요한 환경'이라고 말할 수 있다. 일반적으로 실행 가능한 코드는 전역 코드와 함수 내 코드이다.
 
 자바스크립트 엔진은 코드를 실행하기 위하여 실행에 필요한 여러가지 정보를 알고 있어야 한다. 실행에 필요한 여러가지 정보란 아래와 같은 것들이 있다.
 
@@ -18,10 +18,10 @@
 ```jsx
 var x = 'xxx';
 
-function foo () {
+function foo() {
   var y = 'yyy';
 
-  function bar () {
+  function bar() {
     var z = 'zzz';
     console.log(x + y + z);
   }
@@ -34,13 +34,14 @@ foo();
 
 **여기서 스택(Stack)이란?**
 자료의 입출력이 한 방향에서만 이루어지는 자료구조를 말하는데, 다음과 같은 성질이 있다.
+
 1. 데이터를 집어넣을 수 있는 선형(linear) 자료형이다.
 2. 나중에 집어넣은 데이터가 먼저 나온다. 이 특징을 줄여서 LIFO(Last In First Out, 후입 선출)라고 부른다.
 3. 데이터를 집어넣는 `push`, 데이터를 추출하는 `pop`, 맨 나중에 집어넣은 데이터를 확인하는 `peek` 등의 작업을 할 수 있다.
 
 <img src="https://user-images.githubusercontent.com/65386533/109933462-c9960b80-7d0e-11eb-8c86-33105a395f3a.png" alt="논리적 스택 구조를 가지는 실행 컨텍스트 스택" width="700">
 
-▲ 논리적 스택 구조를 가지는 실행 컨텍스트 스택 
+▲ 논리적 스택 구조를 가지는 실행 컨텍스트 스택
 
 1. 컨트롤이 실행 가능한 코드로 이동하면 논리적 스택 구조를 가지는 새로운 실행 컨텍스트 스택이 생성된다.
 2. 전역 코드(Global code)로 컨트롤이 진입하면 전역 실행 컨텍스트가 생성되고 실행 컨텍스트 스택에 쌓인다. 전역 실행 컨텍스트는 애플리케이션이 종료될 때(웹 페이지에서 나가거나 브라우저를 닫을 때)까지 유지된다.
@@ -67,17 +68,17 @@ Variable Object는 아래의 정보를 담는 객체이다.
 
 Variable Object는 실행 컨텍스트의 프로퍼티이기 때문에 값을 갖는데 이 값은 다른 객체를 가리킨다. 그런데 전역 코드 실행시 생성되는 전역 컨텍스트의 경우와 함수를 실행할 때 생성되는 함수 컨텍스트의 경우, 가리키는 객체가 다르다. 이는 전역 코드와 함수의 내용이 다르기 때문이다. 예를 들어 전역 코드에는 매개변수가 없지만 함수에는 매개변수가 있다.
 
-*Variable Object가 가리키는 객체는 아래와 같다.*
+_Variable Object가 가리키는 객체는 아래와 같다._
 
 **전역 컨텍스트의 경우**
-Variable Object는 유일하며 최상위에 위치하고 모든 전역 변수, 전역 함수 등을 포함하는 **전역 객체(Global Object / GO)**를 가리킨다. 전역 객체는 전역에 선언된 전역 변수와 전역 함수를 프로퍼티로 소유한다.
+Variable Object는 유일하며 최상위에 위치하고 모든 전역 변수, 전역 함수 등을 포함하는 전역 객체(Global Object / GO)를 가리킨다. 전역 객체는 전역에 선언된 전역 변수와 전역 함수를 프로퍼티로 소유한다.
 
 <img src="https://user-images.githubusercontent.com/65386533/109933470-cac73880-7d0e-11eb-83e6-0fe1cf915d6c.png" alt="전역 컨텍스트의 경우, Variable Object가 가리키는 전역 객체" width="700">
 
 ▲ 전역 컨텍스트의 경우, Variable Object가 가리키는 전역 객체
 
 **함수 컨텍스트의 경우**
-Variable Object는 **Activation Object(AO / 활성 객체)**를 가리키며 매개변수와 인수들의 정보를 배열의 형태로 담고 있는 객체인 arguments object가 추가된다.
+Variable Object는 Activation Object(AO / 활성 객체)를 가리키며 매개변수와 인수들의 정보를 배열의 형태로 담고 있는 객체인 arguments object가 추가된다.
 
 <img src="https://user-images.githubusercontent.com/65386533/109933471-cac73880-7d0e-11eb-81e4-ee8a0d901890.png" alt="함수 컨텍스트의 경우, Variable Object가 가리키는 Activation Object" width="700">
 
@@ -94,7 +95,7 @@ Variable Object는 **Activation Object(AO / 활성 객체)**를 가리키며 매
 ▲ 스코프 체인
 
 **스코프 체인은 식별자 중에서 객체(전역 객체 제외)의 프로퍼티가 아닌 식별자, 즉 변수를 검색하는 메커니즘이다.**
-식별자 중에서 변수가 아닌 객체의 프로퍼티(물론 메소드도 포함된다)를 검색하는 메커니즘은 **프로토타입 체인(Prototype Chain)**이다.
+식별자 중에서 변수가 아닌 객체의 프로퍼티(물론 메소드도 포함된다)를 검색하는 메커니즘은 프로토타입 체인(Prototype Chain)이다.
 
 엔진은 스코프 체인을 통해 렉시컬 스코프를 파악한다. 함수가 중첩 상태일 때 하위함수 내에서 상위함수의 스코프와 전역 스코프까지 참조할 수 있는데 이것는 스코프 체인을 검색을 통해 가능하다. 함수가 중첩되어 있으면 중첩될 때마다 부모 함수의 Scope가 자식 함수의 스코프 체인에 포함된다. 함수 실행중에 변수를 만나면 그 변수를 우선 현재 Scope, 즉 Activation Object에서 검색해보고, 만약 검색에 실패하면 스코프 체인에 담겨진 순서대로 그 검색을 이어가게 되는 것이다. 이것이 스코프 체인이라고 불리는 이유이다.
 
@@ -116,8 +117,8 @@ this 프로퍼티에는 this 값이 할당된다. this에 할당되는 값은 �
 
 - 참조
 
-    [https://ko.javascript.info/recursion](https://ko.javascript.info/recursion)
+  [https://ko.javascript.info/recursion](https://ko.javascript.info/recursion)
 
-    [https://poiemaweb.com/js-execution-context](https://poiemaweb.com/js-execution-context)
+  [https://poiemaweb.com/js-execution-context](https://poiemaweb.com/js-execution-context)
 
-    [https://www.hanumoka.net/2017/10/11/android-20171011-android-context/](https://www.hanumoka.net/2017/10/11/android-20171011-android-context/)
+  [https://www.hanumoka.net/2017/10/11/android-20171011-android-context/](https://www.hanumoka.net/2017/10/11/android-20171011-android-context/)
