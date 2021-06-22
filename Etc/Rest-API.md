@@ -45,6 +45,11 @@ HTTP 통신에서 어떤 자원에 대한 **CRUD 요청을 Resource와 Method로
 - Method 서버에 요청을 보내기 위한 방식으로 GET, POST, PUT, PATCH, DELETE가 있다. CRUD 연산 중에서 처리를 위한 연산에 맞는 Method를 사용하여 서버에 요청을 보내야 한다.
 - Representation of Resource 클라이언트와 서버가 데이터를 주고 받는 형태로 JSON, XML, TEXT, RSS 등이 있다. 최근에는 key-value를 활용하는 JSON을 주로 사용한다.
 
+#### 💡 POSTMAN 활용하기
+
+- POSTMAN이란, 프론트엔드/백엔드 구분되어 개발되는 개발 및 서비스 환경 아래 백엔드에서 제공해주는 각종 REST API를 손쉽게 테스트할 수 있는 환경을 제공하는 서비스를 말한다.
+- 프론트엔드(클라이언트)에서 데이터를 저장, 수정, 삭제 등 모든 형태의 데이터 호출 및 반환값 확인을 할 수 있다.
+
 ---
 
 - 참조
